@@ -1,0 +1,8 @@
+.checkout {
+  display: flex;
+  align-items: center;
+  max-width: 1400px;
+  margin: auto;
+  padding: 25px;
+  justify-content: space-between;
+}

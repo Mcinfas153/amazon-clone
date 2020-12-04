@@ -1,0 +1,6 @@
+.slider__img {
+  width: 100%;
+  height: auto;
+  mask-image: linear-gradient(rgba(0, 0, 0, 1), transparent);
+  z-index: -1;
+}

@@ -1,0 +1,10 @@
+.row__slider {
+  display: flex;
+  align-content: center;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.row__title {
+  font-size: 20px;
+  margin: 20px 0 10px;
+}
