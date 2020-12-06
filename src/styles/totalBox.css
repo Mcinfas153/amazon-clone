@@ -1,0 +1,28 @@
+.totalbox {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.totalbox__description {
+  font-size: 13px;
+  font-weight: 500;
+  color: #009400;
+  margin-bottom: 20px;
+}
+.totalbox__totalItem {
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.totalbox__subtotal {
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}

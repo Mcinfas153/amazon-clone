@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Badge } from '@material-ui/core';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SearchIcon from '@material-ui/icons/Search';
 import '../styles/header.css'
+import { useStateValue } from './stateProvider';
 
 function Header() {
     const [logoImage, setLogoImage] = useState('');
     const [userImage, setUserImage] = useState('');
+    const [{ cart }, dispatch] = useStateValue()
 
     useEffect(() => {
         setLogoImage('https://onlinebusinessmanager.com/wp-content/uploads/2018/09/white-amazon-logo-png-6.png');
@@ -16,7 +19,9 @@ function Header() {
     return (
         <div className="header">
             <div className="logo_wrapper">
-                <img src={logoImage} className="header__logo" />
+                <Link to="/">
+                    <img src={logoImage} className="header__logo" />
+                </Link>
             </div>
             <div className="search__wrapper">
                 <input type="text" className="header__search" />
@@ -37,9 +42,11 @@ function Header() {
                     <span className="option__two">Prime</span>
                 </div>
                 <div className="header__option">
-                    <Badge badgeContent={4} color="secondary">
-                        <ShoppingCartIcon className="header__shoppingCart__icon" />
-                    </Badge>
+                    <Link to="/checkout">
+                        <Badge badgeContent={cart?.length} color="secondary">
+                            <ShoppingCartIcon className="header__shoppingCart__icon" />
+                        </Badge>
+                    </Link>
                 </div>
             </div>
         </div >

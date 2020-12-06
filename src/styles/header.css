@@ -50,3 +50,6 @@
 .dflex {
   display: flex;
 }
+.header__option a {
+  color: white;
+}
