@@ -9,7 +9,13 @@ import { useStateValue } from './stateProvider';
 function Header() {
     const [logoImage, setLogoImage] = useState('');
     const [userImage, setUserImage] = useState('');
-    const [{ cart }, dispatch] = useStateValue()
+    const [{ cart, isLogin }, dispatch] = useStateValue()
+
+    const setLogin = () => {
+        dispatch({
+            type: 'LOGIN',
+        })
+    }
 
     useEffect(() => {
         setLogoImage('https://onlinebusinessmanager.com/wp-content/uploads/2018/09/white-amazon-logo-png-6.png');
@@ -29,10 +35,19 @@ function Header() {
             </div>
 
             <div className="right__wrapper">
-                <div className="header__option">
-                    <span className="option__one">Hello, Guest</span>
-                    <span className="option__two">Sign In</span>
-                </div>
+                {
+                    (isLogin) ?
+                        <div className="header__option">
+                            <span className="option__one">Hello, Infas</span>
+                            <span className="option__two" onClick={setLogin}>Sign Out</span>
+                        </div>
+                        :
+                        <div className="header__option">
+                            <span className="option__one">Hello, Guest</span>
+                            <span className="option__two" onClick={setLogin}>Sign in</span>
+                        </div>
+                }
+
                 <div className="header__option">
                     <span className="option__one">Returns</span>
                     <span className="option__two">& Orders</span>

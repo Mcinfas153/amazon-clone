@@ -6,7 +6,7 @@ import { useStateValue } from './stateProvider'
 
 function CheckOut() {
 
-    const [{ cart }, dispatch] = useStateValue()
+    const [{ cart, grandTotal }] = useStateValue()
 
     return (
         <div className="checkout">
@@ -26,13 +26,13 @@ function CheckOut() {
                         :
                         //if cart empty
                         <div className="chekout__empty__wrapper">
-                            <h1>Cart Item is Empty</h1>
+                            <h3>Cart Item is Empty</h3>
                         </div>
 
                 }
             </div>
             <div className="checkout__right__wrapper">
-                <TotalBox />
+                <TotalBox grandTotal={grandTotal} cartItemQty={cart.length} />
             </div>
         </div>
     )

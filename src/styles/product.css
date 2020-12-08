@@ -34,7 +34,9 @@
   border: 1px solid white;
   border-radius: 3px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 .product__button:hover {
   background: linear-gradient(to bottom, #f7b76a, #ff8c00);
+  transform: scale(0.97);
 }
