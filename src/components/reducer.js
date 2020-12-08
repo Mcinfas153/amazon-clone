@@ -1,3 +1,5 @@
+import { act } from "react-dom/test-utils";
+
 export const initialState = {
     cart: [],
     user: null,
@@ -20,6 +22,11 @@ const reducer = (state, action) => {
         }
         case "LOGIN": {
             return { ...state, isLogin: (state.isLogin) ? false : true }
+            break;
+        }
+        case "REMOVE_FROM_BASKET": {
+            let newCart = state.cart.filter(item => item.id !== action.id)
+            return { ...state, cart: newCart }
             break;
         }
         default:

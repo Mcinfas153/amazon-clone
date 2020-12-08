@@ -3,9 +3,22 @@ import { Chip } from '@material-ui/core';
 import * as CurrencyFormat from 'react-currency-format';
 import FaceIcon from '@material-ui/icons/Face';
 import StarIcon from '@material-ui/icons/Star';
+import { useStateValue } from './stateProvider'
 import './../styles/cartItem.css'
 
-function CartItem({ title, imageUrl, sellerName, price, qty, rating }) {
+function CartItem({ id, title, imageUrl, sellerName, price, qty, rating }) {
+
+    const [{ cart }, dispatch] = useStateValue()
+
+    function removeFromCart() {
+        dispatch(
+            {
+                type: "REMOVE_FROM_BASKET",
+                id: id
+            }
+        )
+    }
+
     return (
         <div className="cart__item">
             <div className="cartItem__image__wrapper">
@@ -34,7 +47,7 @@ function CartItem({ title, imageUrl, sellerName, price, qty, rating }) {
                     </p>
                 </div>
                 <div className="cartItem__removeWrapper">
-                    <button className="cartItem__removeButton">Remove from Cart</button>
+                    <button className="cartItem__removeButton" onClick={() => removeFromCart()}>Remove from Cart</button>
                 </div>
             </div>
         </div >

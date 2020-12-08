@@ -18,6 +18,7 @@ function CheckOut() {
                     (cart.length > 0) ?
                         cart.map(item => (
                             <CartItem
+                                id={item.id}
                                 title={item.productTitle}
                                 price={item.productPrice}
                                 qty={item.productQty}
