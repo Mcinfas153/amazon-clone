@@ -16,6 +16,8 @@ function TotalBox({ grandTotal, cartItemQty }) {
                         thousandSeparator={true}
                         prefix={'$'}
                         renderText={value => <div>{value}</div>}
+                        fixedDecimalScale={true}
+                        decimalScale={2}
                     />
                 </strong>
             </p>

@@ -1,37 +1,40 @@
 import React from 'react'
-import { IconButton } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
-import DeleteIcon from '@material-ui/icons/Delete';
+import { Chip } from '@material-ui/core';
+import * as CurrencyFormat from 'react-currency-format';
+import FaceIcon from '@material-ui/icons/Face';
+import StarIcon from '@material-ui/icons/Star';
 import './../styles/cartItem.css'
-import { PinDropSharp } from '@material-ui/icons';
 
-function CartItem({ title, imageUrl, sellerName, price, qty }) {
+function CartItem({ title, imageUrl, sellerName, price, qty, rating }) {
     return (
         <div className="cart__item">
             <div className="cartItem__image__wrapper">
                 <img src={imageUrl} className="cartItem__image" />
             </div>
             <div className="cartItem__info__wrapper">
-                <a className="cartItem__title">{title}</a>
-                <p className="cartItem__seller">{sellerName}</p>
+                <a className="cartItem__title" title={title}>{title}</a>
                 {/* small banner */}
-                <div className="cartItem__qtyController">
-                    <IconButton className="qty__btn decrease--btn"><RemoveIcon /></IconButton>
-                    <select className="cartItem__qty">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <IconButton className="qty__btn increase--btn"><AddIcon /></IconButton>
+                <div className="cartItem__ratingWrapper">
+                    {
+                        Array(rating).fill().map((_, i) => (
+                            <StarIcon className="productRating__icon" />
+                        ))
+                    }
                 </div>
+                <p className="cartItem__sellername">
+                    <Chip
+                        className="cartItem__sellernameChip"
+                        icon={<FaceIcon />}
+                        label={sellerName}
+                    />
+                </p>
                 <div className="cartItem__price__wrapper">
-                    <p className="cartItem__price">{price}</p>
-                    <IconButton className="cartItem__remove__btn">
-                        <DeleteIcon fontSize="small" />
-                    </IconButton>
+                    <p className="cartItem__price">
+                        <CurrencyFormat value={price} displayType={'text'} thousandSeparator={true} prefix={'$'} fixedDecimalScale={true} decimalScale={2} />
+                    </p>
+                </div>
+                <div className="cartItem__removeWrapper">
+                    <button className="cartItem__removeButton">Remove from Cart</button>
                 </div>
             </div>
         </div >

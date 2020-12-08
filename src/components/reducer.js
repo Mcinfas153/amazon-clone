@@ -6,6 +6,9 @@ export const initialState = {
     isButtonDisabled: false
 };
 
+// Selector
+export const getBasketTotal = (basket) =>
+    basket?.reduce((amount, item) => item.productPrice + amount, 0);
 
 const reducer = (state, action) => {
     //console.log(state)

@@ -10,9 +10,10 @@
   flex-grow: 1;
 }
 .cartItem__image {
-  max-height: 150px;
-  width: auto;
+  max-height: 120px;
+  height: auto;
   object-fit: contain;
+  max-width: 100px;
 }
 .cartItem__info__wrapper {
   margin: 0 30px;
@@ -33,29 +34,9 @@
   margin: 2px 0;
   color: #1f1f1f;
 }
-.cartItem__qty {
-  padding: 5px 20px;
-  margin: 10px 0;
-  border-radius: 3px;
-  color: #007186;
-}
-.cartItem__qtyController {
-  display: flex;
-  align-items: center;
-}
-.qty__btn {
-  border-radius: 3px !important;
-  height: 28px !important;
-  padding: 4px !important;
+.cartItem__sellernameChip {
+  background: #f5a844 !important;
   color: white !important;
-}
-.decrease--btn {
-  background: #ca4a4a !important;
-  margin-right: 8px !important;
-}
-.increase--btn {
-  background: #209c01 !important;
-  margin-left: 8px !important;
 }
 .cartItem__price__wrapper {
   display: flex;
@@ -63,15 +44,21 @@
   margin: 5px 0px;
   justify-content: space-between;
 }
-.cartItem__remove__btn {
-  background: #ff5252 !important;
-  border-radius: 3px !important;
-  height: 8px !important;
-  padding: 14px 8px !important;
-  color: white !important;
-}
 .cartItem__price {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
-  margin-right: 20px;
+  margin: 10px 5px;
+}
+.cartItem__removeButton {
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  padding: 8px 25px;
+  border: 1px solid black;
+  border-radius: 3px;
+  color: black;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+.cartItem__removeButton:hover {
+  transform: scale(0.9);
+  background: linear-gradient(to bottom, #f7b76a, #ff8c00);
 }

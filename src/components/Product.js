@@ -21,7 +21,8 @@ function Product({ productId, imageUrl, productTitle, productPrice, productSelle
                 imageUrl: imageUrl,
                 productTitle: productTitle,
                 productPrice: productPrice,
-                productRating: productRating
+                productRating: productRating,
+                productSeller: productSeller
             },
         });
     }

@@ -23,7 +23,8 @@
   transition: all 0.2s ease-in-out;
 }
 .totalbox__checkout__btn:hover {
-  background: linear-gradient(to bottom, #dfb451, #c4992e);
+  background: linear-gradient(to bottom, #f7b76a, #ff8c00);
+  transform: scale(0.9);
 }
 .chekout__empty__wrapper {
   text-align: center;

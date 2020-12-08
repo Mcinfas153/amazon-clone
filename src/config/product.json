@@ -3,7 +3,7 @@
         "id": 1,
         "imageUrl": "https://m.media-amazon.com/images/I/51o9AFKoDXL._AC_UL480_FMwebp_QL65_.jpg",
         "productTitle": "Bluetooth 5.0 True Wireless Earbuds with Charging Case for iPhone Android, 28H Playtime, IPX5 Waterproof",
-        "productPrice": "79",
+        "productPrice": 79,
         "productSeller": "Amazon",
         "rating": 5
     },
@@ -11,7 +11,7 @@
         "id": 2,
         "imageUrl": "https://m.media-amazon.com/images/I/81cxPIyXaqL._AC_UL480_FMwebp_QL65_.jpg",
         "productTitle": "Mens COLOUR BLOCK TEE Men's T-Shirts",
-        "productPrice": "19",
+        "productPrice": 19,
         "productSeller": "Lee",
         "rating": 3
     },
@@ -19,7 +19,7 @@
         "id": 3,
         "imageUrl": "https://m.media-amazon.com/images/I/71reah2yf3L._AC_UL480_FMwebp_QL65_.jpg",
         "productTitle": "Samsung Galaxy M21 Dual SIM 64GB 4GB RAM 4G LTE (UAE Version) - Green - 1 year local brand warranty",
-        "productPrice": "599",
+        "productPrice": 599,
         "productSeller": "Amazon",
         "rating": 4
     },
@@ -27,7 +27,7 @@
         "id": 4,
         "imageUrl": "https://images-eu.ssl-images-amazon.com/images/I/41P+4WOjP4L._AC_SX368_.jpg",
         "productTitle": "Sony PlayStation 4 Pro 1TB Console with Days Gone",
-        "productPrice": "1410.50",
+        "productPrice": 1410.50,
         "productSeller": "Sony",
         "rating": 5
     },
@@ -35,7 +35,7 @@
         "id": 5,
         "imageUrl": "https://m.media-amazon.com/images/I/81p1L85KinL._AC_UL480_FMwebp_QL65_.jpg",
         "productTitle": "Apple iPad Pro 11' (2020 - 2nd Gen), Wi‑Fi, 256GB, Space Grey (With Facetime)",
-        "productPrice": "3351",
+        "productPrice": 1531,
         "productSeller": "Apple",
         "rating": 5
     },
@@ -43,7 +43,7 @@
         "id": 6,
         "imageUrl": "https://m.media-amazon.com/images/I/51dhkq86nAL._AC_UL480_FMwebp_QL65_.jpg",
         "productTitle": "Lenovo Tab M8 HD 2ND GEN (TB-8505X), 8 inch Tablet, MediaTek Helio A22 Processor, 2GB RAM, 32GB Storage, WiFi+4G LTE, Android OS, Iron Grey - [ZA5H0047AE]",
-        "productPrice": "497.75",
+        "productPrice": 497.75,
         "productSeller": "Amazon",
         "rating": 3
     }
