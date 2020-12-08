@@ -6,6 +6,7 @@ export const initialState = {
     isButtonDisabled: false
 };
 
+
 const reducer = (state, action) => {
     //console.log(state)
     switch (action.type) {

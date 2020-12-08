@@ -8,10 +8,10 @@ function Home() {
         <div className="home">
             <Slider />
             <div className="home__row__wrapper">
-                <HomeRow title="Clothing" />
-                <HomeRow title="Electronics" />
-                <HomeRow title="Household" />
-                <HomeRow title="Food & Beverage" />
+                <HomeRow key={1} title="Clothing" />
+                <HomeRow key={2} title="Electronics" />
+                <HomeRow key={3} title="Household" />
+                <HomeRow key={4} title="Food & Beverage" />
             </div>
 
         </div>

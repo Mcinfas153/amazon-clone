@@ -1,27 +1,27 @@
-import React, { useState } from 'react'
-import { Card } from '@material-ui/core';
+import React, { useEffect, useState } from 'react'
+import { Card, Chip } from '@material-ui/core';
+import FaceIcon from '@material-ui/icons/Face';
+import StarIcon from '@material-ui/icons/Star';
 import { useStateValue } from "./../components/stateProvider";
+import truncate from 'truncate'
+import emoji from 'node-emoji'
+import * as CurrencyFormat from 'react-currency-format';
 import '../styles/product.css'
 
-function Product() {
+function Product({ productId, imageUrl, productTitle, productPrice, productSeller, productRating }) {
     const [{ cart, isButtonDisabled }, dispatch] = useStateValue();
-
-    const [product, setProduct] = useState({
-        imageUrl: 'https://m.media-amazon.com/images/I/71QkAdkuyEL._AC_SY400_.jpg',
-        productTitle: 'Lorem Ispum',
-        productPrice: '1,200.00 USD',
-        productQty: 1,
-        productSeller: 'Mc Infas'
-    });
+    const [ratingHtml, setRatingHtml] = useState('')
 
     const addToBasket = () => {
         // dispatch the item into the data layer
         dispatch({
             type: "ADD_TO_BASKET",
             item: {
-                imageUrl: 'https://m.media-amazon.com/images/I/71QkAdkuyEL._AC_SY400_.jpg',
-                productTitle: 'Lorem Ispum',
-                productPrice: '1,200.00 USD'
+                id: productId,
+                imageUrl: imageUrl,
+                productTitle: productTitle,
+                productPrice: productPrice,
+                productRating: productRating
             },
         });
     }
@@ -29,9 +29,27 @@ function Product() {
     return (
         <div className="product">
             <Card className="product__card">
-                <img src={product.imageUrl} className="product__image" />
-                <h5 className="product__title">{product.productTitle}</h5>
-                <p className="product__price">{product.productPrice}</p>
+                <div className="productImage__wrapper">
+                    <img src={imageUrl} className="product__image" />
+                </div>
+                <h5 className="product__title" title={productTitle}>{truncate(productTitle, 50)}</h5>
+                <div className="prductRating__wrapper">
+                    {
+                        Array(productRating).fill().map((_, i) => (
+                            <StarIcon className="productRating__icon" />
+                        ))
+                    }
+                </div>
+                <p className="product__sellername">
+                    <Chip
+                        className="product__sellernameChip"
+                        icon={<FaceIcon />}
+                        label={productSeller}
+                    />
+                </p>
+                <p className="product__price">{
+                    <CurrencyFormat value={productPrice} displayType={'text'} thousandSeparator={true} prefix={'$'} fixedDecimalScale={true} decimalScale={2} />
+                }</p>
                 <div className="product__btn__wrapper">
                     <button className={isButtonDisabled ? "product__button button--disabled" : "product__button"} onClick={addToBasket}>Add to Basket</button>
                 </div>

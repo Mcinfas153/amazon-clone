@@ -3,11 +3,11 @@ import CartItem from './CartItem'
 import TotalBox from './TotalBox'
 import './../styles/checkout.css'
 import { useStateValue } from './stateProvider'
+import { get } from 'node-emoji'
 
 function CheckOut() {
 
     const [{ cart, grandTotal }] = useStateValue()
-
     return (
         <div className="checkout">
             <div className="checkout__left__wrapper">

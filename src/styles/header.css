@@ -4,6 +4,10 @@
   background-color: #232f3e;
   color: white;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 .header__logo {
   object-fit: contain;
