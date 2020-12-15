@@ -35,18 +35,13 @@ function Header() {
             </div>
 
             <div className="right__wrapper">
-                {
-                    (isLogin) ?
-                        <div className="header__option">
-                            <span className="option__one">Hello, Infas</span>
-                            <span className="option__two" onClick={setLogin}>Sign Out</span>
-                        </div>
-                        :
-                        <div className="header__option">
-                            <span className="option__one">Hello, Guest</span>
-                            <span className="option__two" onClick={setLogin}>Sign in</span>
-                        </div>
-                }
+
+                <Link to="/login">
+                    <div className="header__option">
+                        <span className="option__one">Hello, User</span>
+                        <span className="option__two">Sign in</span>
+                    </div>
+                </Link>
 
                 <div className="header__option">
                     <span className="option__one">Returns</span>

@@ -68,3 +68,26 @@
   background: linear-gradient(to bottom, #f7b76a, #ff8c00);
   transform: scale(0.97);
 }
+.a-divider.a-divider-break {
+  text-align: center;
+  position: relative;
+  top: 2px;
+  padding-top: 1px;
+  margin-bottom: 14px;
+  line-height: 0;
+  margin-top: 25px;
+}
+.login__registerBtn {
+  width: 300px;
+  padding: 10px 10px;
+  margin: 15px 0;
+  cursor: pointer;
+  background: #e8e8e8;
+  border: 1px solid black;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+}
+.login__registerBtn:hover {
+  background: #cccccc;
+  transform: scale(0.97);
+}
