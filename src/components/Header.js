@@ -13,7 +13,11 @@ function Header() {
     const [userImage, setUserImage] = useState('');
     const [{ cart, user }, dispatch] = useStateValue()
 
-
+    const handleAuthentication = () => {
+        if (user) {
+            auth.signOut()
+        }
+    }
 
     useEffect(() => {
         setLogoImage('https://onlinebusinessmanager.com/wp-content/uploads/2018/09/white-amazon-logo-png-6.png');
@@ -52,8 +56,8 @@ function Header() {
 
             <div className="right__wrapper">
 
-                <Link to="/login">
-                    <div className="header__option">
+                <Link to={!user && '/login'}>
+                    <div className="header__option" onClick={handleAuthentication}>
                         <span className="option__one">Hello, {(user) ? extractText(user.email, '@') : 'User'}</span>
                         <span className="option__two">{(user) ? 'Sign Out' : 'Sign In'}</span>
                     </div>

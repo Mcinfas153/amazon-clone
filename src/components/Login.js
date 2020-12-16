@@ -10,7 +10,8 @@ function Login() {
 
     const history = useHistory();
 
-    const login = () => {
+    const login = (e) => {
+        e.preventDefault();
         auth.signInWithEmailAndPassword(email, password)
             .then((authUser) => {
                 console.log(authUser)
@@ -22,7 +23,8 @@ function Login() {
             });
     }
 
-    const register = () => {
+    const register = (e) => {
+        e.preventDefault();
         // here we can do some firebase shit
         auth.createUserWithEmailAndPassword(email, password)
             .then((authUser) => {
